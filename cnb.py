@@ -10,8 +10,7 @@ def ExecuteCmd(str):
 	else:
 		return result
 
-tokens = os.getcwd().split("/")
-project_name = tokens[-1]
+project_name = os.getcwd().split("/")[-1]
 print "project_name: " + project_name
 
 base_nbproject = "/home/johnnyj/nbproject"
@@ -27,7 +26,6 @@ header_files = ExecuteCmd("ls *.h").split()
 new_nbproject = os.path.join(os.getcwd(), "nbproject")
 config_file = open(os.path.join(new_nbproject, "configurations.xml"), "r")
 new_config = []
-s = ""
 for line in config_file:
 	new_config.append(line)
 	m = re.match(".*logicalFolder.*HeaderFiles.*", line)
