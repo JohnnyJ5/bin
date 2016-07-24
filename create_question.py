@@ -11,6 +11,9 @@ cpp = os.path.join(os.getcwd(), sys.argv[1].lower() + ".cpp")
 cpp_file = open(cpp, "w")
 
 cpp_file.write("#include \"" + sys.argv[1].lower() + ".h\"\n")
+cpp_file.write("#include <string>\n")
+cpp_file.write("#include <vector>\n")
+cpp_file.write("#include <iostream>\n")
 cpp_file.write("\n")
 for x in range(4,0,-1):
 	cpp_file.write("static void TestCase" + str(x) + "()\n")
